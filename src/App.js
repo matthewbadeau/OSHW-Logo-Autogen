@@ -51,7 +51,7 @@ class App extends Component {
           <input type="checkbox" defaultChecked="true" name="mech" onChange={this.handleOptionChange} /> Mechanical/CAD Files <br />
           <input type="checkbox" defaultChecked="true" name="designdocs" onChange={this.handleOptionChange} /> Design Documents <br />
           <input type="checkbox" defaultChecked="true" name="bom" onChange={this.handleOptionChange} /> Bill of Materials <br />
-          <input type="checkbox" defaultChecked="true" name="commercial" onChange={this.handleOptionChange} /> Commerical Allowed <br />
+          <input type="checkbox" defaultChecked="true" name="commercial" onChange={this.handleOptionChange} /> Commercial Allowed <br />
           <br />
           Width: <input type="number" name="imageWidth" defaultValue="400" className="ImageSize" onChange={this.handleImageSizeChange} /><br />
           Height: <input type="number" name="imageHeight" defaultValue="400" className="ImageSize" onChange={this.handleImageSizeChange} /><br />
