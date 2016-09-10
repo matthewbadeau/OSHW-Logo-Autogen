@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Oshwlogo from './oshwlogo.jsx';
+import Oshwlogo from './oshwlogo.js';
 import { Wrapper, Trigger } from 'react-download-svg';
 import './App.css';
 
