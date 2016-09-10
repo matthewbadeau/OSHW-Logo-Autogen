@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App div {
+  width: 300px;
+  float: left;
+}
+
+.Logo img {
+  width: 50%;
+}
+
+.Options {
+  margin-top: 90px;
+  margin-left: 40px;
+  width: 50%;
+  text-align: left;
+}
+
+.ImageSize {
+  width : 60px;
+}
