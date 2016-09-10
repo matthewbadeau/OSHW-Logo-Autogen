@@ -26,13 +26,13 @@ export default class Oshwlogo extends Component{
         </g>
         <mask id="text">
           <rect width="100%" height="100%" fill="#FFFFFF" opacity="1" />
-          <path d={this.props.schematic} />
-          <path d={this.props.pcb} />
-          <path d={this.props.firmware} />
-          <path d={this.props.mech} />
-          <path d={this.props.designdocs} />
-          <path d={this.props.bom} />
-          <path d={this.props.commercial} />
+          <text x="42" y="112" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.schematic}</text>
+          <text x="24" y="74" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.pcb}</text>
+          <text x="120" y="36" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.firmware}</text>
+          <text x="77" y="20" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.mech}</text>
+          <text x="41" y="36" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.designdocs}</text>
+          <text x="134" y="74" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.bom}</text>
+          <text x="118" y="114" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.commercial}</text>
         </mask>
       </svg>
     )
