@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Oshwlogo from './oshwlogo.js';
-import { Wrapper, Trigger } from 'react-download-svg';
+import Downloader from './downloader.js';
 import { Row, Col, Input, Navbar, NavItem } from 'react-materialize';
 import './App.css';
 
@@ -29,19 +29,19 @@ class App extends Component {
       commercial : {
         selected: true
       },
+      style: 'original',
       imageWidth: 400,
       imageHeight: 400
     };
     this.handleOptionChange = this.handleOptionChange.bind(this)
-    this.handleImageSizeChange = this.handleImageSizeChange.bind(this)
+    this.handleStyleChange = this.handleStyleChange.bind(this)
   }
   handleOptionChange(val) {
     // eslint-disable-next-line
     val.target.checked ? this.setState({[val.target.value] : {selected : true}}) : this.setState({[val.target.value] : {selected : false}})
   }
-  handleImageSizeChange(val) {
-    // eslint-disable-next-line
-    this.setState({[val.target.name]: isNaN(parseInt(val.target.value)) ? 400 : parseInt(val.target.value)});
+  handleStyleChange(val) {
+    this.setState({style: val.target.value})
   }
   render() {
     return (
@@ -54,7 +54,6 @@ class App extends Component {
         </Row>
         <Row>
           <Col s={3} className="Logo offset-s3">
-            <Wrapper filename="oshwlogo.png" listenFor="downloadSvg">
               <Oshwlogo id="oshwlogo"
                 schematic={this.state.schematic.selected ? 'S' : ""}
                 pcb={this.state.pcb.selected ? 'P' : ""}
@@ -63,8 +62,8 @@ class App extends Component {
                 designdocs={this.state.designdocs.selected ? 'D' : ""}
                 bom={this.state.bom.selected ? 'B' : ""}
                 commercial={this.state.commercial.selected ? 'C' : ""}
+                style={this.state.style}
                 />
-            </Wrapper>
           </Col>
           <Col s={3} className="Options">
             <Row>
@@ -140,51 +139,29 @@ class App extends Component {
                 value="original"
                 label="Original"
                 defaultChecked="true"
+                onChange={this.handleStyleChange}
                 />
               <Input
                 name="logoselect"
                 type="radio"
                 value="outline"
                 label="Outline"
+                onChange={this.handleStyleChange}
                 />
               <Input
                 name="logoselect"
                 type="radio"
-                value="outlinelight"
+                value="light"
                 label="Outline-Light"
+                onChange={this.handleStyleChange}
                 />
             </div>
           </Col>
-          <Row>
-            <Col s={1}>
-                <Input
-                  type="number"
-                  name="imageWidth"
-                  defaultValue="400"
-                  className="ImageSize"
-                  label="Width"
-                  onChange={this.handleImageSizeChange}
-                  s={12}
-                />
-                <Input
-                  type="number"
-                  name="imageHeight"
-                  defaultValue="400"
-                  className="ImageSize"
-                  label="Height"
-                  onChange={this.handleImageSizeChange}
-                  s={12}
-                />
-              <Trigger
-                className="Button"
-                eventName="downloadSvg"
-                width={this.state.imageWidth}
-                height={this.state.imageHeight}
-                >
-                Download PNG
-              </Trigger>
-            </Col>
-          </Row>
+        </Row>
+        <Row>
+          <Col s={12} m={6} l={3}>
+            <Downloader />
+          </Col>
         </Row>
       </div>
     );

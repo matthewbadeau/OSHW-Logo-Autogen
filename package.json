@@ -10,7 +10,6 @@
   "dependencies": {
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-download-svg": "0.0.3",
     "react-materialize": "^0.16.4"
   },
   "scripts": {
