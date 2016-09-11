@@ -28,15 +28,26 @@ class App extends Component {
   }
   handleOptionChange(val) {
     this.setState({[val.target.value] : val.target.checked})
-    if (val.target.value === 'line' || val.target.value === 'outline'){
+  }
+  handleStyleChange(val) {
+    if (val.target.value === 'light' || val.target.value === 'outline'){
+      if (val.target.value === 'light'){
+        document.getElementById("logo").style.cssText = 'background-color: #333333'
+      } else {
+        document.getElementById("logo").style.cssText = 'background-color: #FFFFFF'
+      }
       this.setState({
+        style: val.target.value,
         fontSize : 17,
         fontFamily : '\'Open Sans Condensed\', Helvetica Neue, Arial, Helvetica, sans-serif'
       })
+    } else {
+      this.setState({
+        style: val.target.value,
+        fontSize : 20,
+        fontFamily : '\'Open Sans\', Helvetica Neue, Arial, Helvetica, sans-serif'
+      })
     }
-  }
-  handleStyleChange(val) {
-    this.setState({style: val.target.value})
   }
   render() {
     return (
