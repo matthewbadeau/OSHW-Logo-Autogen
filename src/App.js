@@ -8,37 +8,24 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      schematic : {
-        selected: true
-      },
-      pcb : {
-        selected: true
-      },
-      firmware : {
-        selected: true
-      },
-      mech : {
-        selected: true
-      },
-      designdocs : {
-        selected: true
-      },
-      bom : {
-        selected: true
-      },
-      commercial : {
-        selected: true
-      },
-      style: 'original',
-      imageWidth: 400,
-      imageHeight: 400
+      schematic : true,
+      pcb : true,
+      firmware : true,
+      mech : true,
+      designdocs : true,
+      bom : true,
+      commercial : true,
+      style : 'original',
+      imageWidth : 400,
+      imageHeight : 400,
+      davemod : true,
+      oshwunmask : true
     };
     this.handleOptionChange = this.handleOptionChange.bind(this)
     this.handleStyleChange = this.handleStyleChange.bind(this)
   }
   handleOptionChange(val) {
-    // eslint-disable-next-line
-    val.target.checked ? this.setState({[val.target.value] : {selected : true}}) : this.setState({[val.target.value] : {selected : false}})
+    this.setState({[val.target.value] : val.target.checked})
   }
   handleStyleChange(val) {
     this.setState({style: val.target.value})
@@ -55,14 +42,16 @@ class App extends Component {
         <Row>
           <Col s={3} className="Logo offset-s3">
               <Oshwlogo id="oshwlogo"
-                schematic={this.state.schematic.selected ? 'S' : ""}
-                pcb={this.state.pcb.selected ? 'P' : ""}
-                firmware={this.state.firmware.selected ? 'F' : ""}
-                mech={this.state.mech.selected ? 'M' : ""}
-                designdocs={this.state.designdocs.selected ? 'D' : ""}
-                bom={this.state.bom.selected ? 'B' : ""}
-                commercial={this.state.commercial.selected ? 'C' : ""}
+                schematic={this.state.schematic ? 'S' : ""}
+                pcb={this.state.pcb ? 'P' : ""}
+                firmware={this.state.firmware ? 'F' : ""}
+                mech={this.state.mech ? 'M' : ""}
+                designdocs={this.state.designdocs ? 'D' : ""}
+                bom={this.state.bom ? 'B' : ""}
+                commercial={this.state.commercial ? 'C' : ""}
                 style={this.state.style}
+                davemod={this.state.davemod}
+                oshwunmask={this.state.oshwunmask}
                 />
           </Col>
           <Col s={3} className="Options">
@@ -131,6 +120,24 @@ class App extends Component {
                 s={12}
                 />
               <br />
+              Dave Jones's Proposal
+              <Input
+                type="switch"
+                defaultChecked="true"
+                name="davemod"
+                value="davemod"
+                onChange={this.handleOptionChange}
+                s={12}
+                />
+              Open Source Hardware text
+              <Input
+                type="switch"
+                defaultChecked="true"
+                name="oshwunmask"
+                value="oshwunmask"
+                onChange={this.handleOptionChange}
+                s={12}
+                />
             </Row>
             <div>
               <Input

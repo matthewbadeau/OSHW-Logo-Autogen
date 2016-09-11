@@ -19,7 +19,6 @@ export default class Downloader extends Component{
     this.setState({[val.target.name]: isNaN(parseInt(val.target.value)) ? 400 : parseInt(val.target.value)});
   }
   handleFiletypeOptionChange(val) {
-    console.log({[val.target.name]: val.target.value ? val.target.value : 'png' })
     this.setState({[val.target.name]: val.target.value ? val.target.value : 'png' });
   }
   handleDownloadClick(options){
