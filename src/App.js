@@ -30,12 +30,12 @@ class App extends Component {
     this.setState({[val.target.value] : val.target.checked})
   }
   handleStyleChange(val) {
+    if (val.target.value === 'light'){
+      document.getElementById("logo").style.cssText = 'background-color: #333333'
+    } else {
+      document.getElementById("logo").style.cssText = 'background-color: #FFFFFF'
+    }
     if (val.target.value === 'light' || val.target.value === 'outline'){
-      if (val.target.value === 'light'){
-        document.getElementById("logo").style.cssText = 'background-color: #333333'
-      } else {
-        document.getElementById("logo").style.cssText = 'background-color: #FFFFFF'
-      }
       this.setState({
         style: val.target.value,
         fontSize : 17,
