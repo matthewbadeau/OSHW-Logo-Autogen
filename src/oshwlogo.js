@@ -12,7 +12,7 @@ export default class Oshwlogo extends Component{
         y: 74,
       },
       firmware : {
-        x: 120,
+        x: 41,
         y: 36,
       },
       mech : {
@@ -20,7 +20,7 @@ export default class Oshwlogo extends Component{
         y: 20,
       },
       designdocs : {
-        x: 41,
+        x: 120,
         y: 36,
       },
       bom : {
@@ -42,7 +42,7 @@ export default class Oshwlogo extends Component{
         y: 130,
       },
       firmware : {
-        x: 120,
+        x: 41,
         y: 130,
       },
       mech : {
@@ -50,7 +50,7 @@ export default class Oshwlogo extends Component{
         y: 130,
       },
       designdocs : {
-        x: 41,
+        x: 120,
         y: 130,
       },
       bom : {
@@ -114,9 +114,9 @@ class OshwlogoOrig extends Component {
         <rect width="180" height="140" fill="#FFFFFF" opacity="1" />
         <text x="42" y="112" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.schematic}</text>
         <text x="24" y="74" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.pcb}</text>
-        <text x="120" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.firmware}</text>
+        <text x="41" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.firmware}</text>
         <text x="77" y="20" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.mech}</text>
-        <text x="41" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.designdocs}</text>
+        <text x="120" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.designdocs}</text>
         <text x="134" y="74" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.bom}</text>
         <text x="118" y="114" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.commercial}</text>
       </mask>
@@ -157,18 +157,18 @@ class OshwlogoOutline extends Component {
         <g id="text" mask={this.props.options.davemod ? '' : 'url(#textMask)'}>
           <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="112" >{this.props.options.schematic}</text>
           <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="26" y="74">{this.props.options.pcb}</text>
-          <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.firmware}</text>
+          <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.firmware}</text>
           <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="79" y="20">{this.props.options.mech}</text>
-          <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.designdocs}</text>
+          <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.designdocs}</text>
           <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.bom}</text>
           <text fill="#333333" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="119" y="113">{this.props.options.commercial}</text>
         </g>
         <mask id="textMask">
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="112" >{this.props.options.schematic}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="26" y="74">{this.props.options.pcb}</text>
-          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.firmware}</text>
+          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.firmware}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="79" y="20">{this.props.options.mech}</text>
-          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.designdocs}</text>
+          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.designdocs}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.bom}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="119" y="113">{this.props.options.commercial}</text>
         </mask>
@@ -212,19 +212,19 @@ class OshwlogoOutlineLight extends Component {
         <g id="text" mask={this.props.options.davemod ? '' : 'url(#textMask)'}>
           <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="112" >{this.props.options.schematic}</text>
           <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="26" y="74">{this.props.options.pcb}</text>
-          <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.firmware}</text>
+          <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.firmware}</text>
           <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="79" y="20">{this.props.options.mech}</text>
           <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.designdocs}</text>
-          <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.bom}</text>
+          <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.bom}</text>
           <text fill="#E7E8E9" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="119" y="113">{this.props.options.commercial}</text>
         </g>
         <mask id="textMask">
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="112" >{this.props.options.schematic}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="26" y="74">{this.props.options.pcb}</text>
-          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.firmware}</text>
+          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.firmware}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="79" y="20">{this.props.options.mech}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="42" y="35">{this.props.options.designdocs}</text>
-          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="134" y="74">{this.props.options.bom}</text>
+          <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="120" y="36">{this.props.options.bom}</text>
           <text fill="#000000" fontFamily="Open Sans Condensed, sans-serif" fontWeight="400" fontSize="17" x="119" y="113">{this.props.options.commercial}</text>
         </mask>
       </svg>
