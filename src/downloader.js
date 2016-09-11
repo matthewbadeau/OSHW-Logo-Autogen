@@ -5,7 +5,7 @@ export default class Downloader extends Component{
   constructor(){
     super();
     this.state = {
-      filename: 'oshw-logo.png',
+      filename: 'oshw-logo',
       filetype: 'png',
       width: 400,
       height: 400
@@ -15,14 +15,45 @@ export default class Downloader extends Component{
     this.handleDownloadClick = this.handleDownloadClick.bind(this)
   }
   handleImageSizeChange(val) {
-    // eslint-disable-next-line
-    this.setState({[val.target.name]: isNaN(parseInt(val.target.value)) ? 400 : parseInt(val.target.value)});
+    this.setState({[val.target.name]: isNaN(parseInt(val.target.value, 10)) ? 400 : parseInt(val.target.value, 10)});
   }
   handleFiletypeOptionChange(val) {
     this.setState({[val.target.name]: val.target.value ? val.target.value : 'png' });
   }
   handleDownloadClick(options){
-    alert("test")
+    const { width, height } = this.state;
+    const svg = document.getElementsByTagName("svg")[0]
+    const svgClone = svg.cloneNode(true)
+
+    svgClone.style['font-family'] = this.props.options.fontFamily
+    svgClone.style['font-size'] = this.props.options.fontSize
+
+    svgClone.setAttribute('width', width)
+    svgClone.setAttribute('height', height)
+
+    const svgData = new XMLSerializer().serializeToString(svgClone)
+
+    var canvas = document.createElement('canvas')
+
+    canvas.setAttribute('width', width)
+    canvas.setAttribute('height', height)
+
+    var ctx = canvas.getContext('2d')
+
+    var img = document.createElement('img')
+
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, width, height)
+
+      var a = document.createElement('a')
+      a.setAttribute('href', canvas.toDataURL('image/' + this.state.filetype))
+      a.setAttribute('target', 'download')
+      a.setAttribute('download', this.state.filename + '.' + this.state.filetype)
+      a.click()
+    }
+
+    img.setAttribute('src', 'data:image/svg+xml;base64,' + btoa(svgData))
+
   }
   render() {
     return (
@@ -30,7 +61,7 @@ export default class Downloader extends Component{
         <Col s={12}>
           <Input
             type="number"
-            name="imageWidth"
+            name="width"
             defaultValue="400"
             className="ImageSize"
             label="Width"
@@ -38,7 +69,7 @@ export default class Downloader extends Component{
           />
           <Input
             type="number"
-            name="imageHeight"
+            name="height"
             defaultValue="400"
             className="ImageSize"
             label="Height"
@@ -58,17 +89,16 @@ export default class Downloader extends Component{
             name="filetype"
             type="radio"
             value="bmp"
-            label="bmp"
+            label="1-bpp bmp"
             onChange={this.handleFiletypeOptionChange}
             disabled={true}
             />
           <Input
             name="filetype"
             type="radio"
-            value="jpg"
-            label="jpg"
+            value="jpeg"
+            label="jpeg"
             onChange={this.handleFiletypeOptionChange}
-            disabled={true}
             />
         </Col>
         <Col s={12}>
@@ -76,7 +106,7 @@ export default class Downloader extends Component{
             waves="light"
             onClick={this.handleDownloadClick}
             >
-          {this.state.filetype}
+          Download
           </Button>
         </Col>
       </Row>

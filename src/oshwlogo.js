@@ -112,13 +112,13 @@ class OshwlogoOrig extends Component {
       </mask>
       <mask id="text">
         <rect width="180" height="140" fill="#FFFFFF" opacity="1" />
-        <text x="42" y="112" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.schematic}</text>
-        <text x="24" y="74" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.pcb}</text>
-        <text x="120" y="36" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.firmware}</text>
-        <text x="77" y="20" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.mech}</text>
-        <text x="41" y="36" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.designdocs}</text>
-        <text x="134" y="74" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.bom}</text>
-        <text x="118" y="114" fontFamily="Open Sans, sans-serif" fontWeight="800" fontSize="20">{this.props.options.commercial}</text>
+        <text x="42" y="112" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.schematic}</text>
+        <text x="24" y="74" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.pcb}</text>
+        <text x="120" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.firmware}</text>
+        <text x="77" y="20" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.mech}</text>
+        <text x="41" y="36" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.designdocs}</text>
+        <text x="134" y="74" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.bom}</text>
+        <text x="118" y="114" fontFamily="Open Sans, sans-serif" fontWeight="700" fontSize="20">{this.props.options.commercial}</text>
       </mask>
       </svg>
       )

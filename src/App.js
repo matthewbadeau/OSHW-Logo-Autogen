@@ -19,13 +19,21 @@ class App extends Component {
       imageWidth : 400,
       imageHeight : 400,
       davemod : true,
-      oshwunmask : true
+      oshwunmask : true,
+      fontSize : 20,
+      fontFamily : '\'Open Sans\', Helvetica Neue, Arial, Helvetica, sans-serif'
     };
     this.handleOptionChange = this.handleOptionChange.bind(this)
     this.handleStyleChange = this.handleStyleChange.bind(this)
   }
   handleOptionChange(val) {
     this.setState({[val.target.value] : val.target.checked})
+    if (val.target.value === 'line' || val.target.value === 'outline'){
+      this.setState({
+        fontSize : 17,
+        fontFamily : '\'Open Sans Condensed\', Helvetica Neue, Arial, Helvetica, sans-serif'
+      })
+    }
   }
   handleStyleChange(val) {
     this.setState({style: val.target.value})
@@ -40,7 +48,7 @@ class App extends Component {
           <Col s={12} />
         </Row>
         <Row>
-          <Col s={3} className="Logo offset-s3">
+          <Col s={3} className="Logo offset-s3" id="logo">
               <Oshwlogo id="oshwlogo"
                 schematic={this.state.schematic ? 'S' : ""}
                 pcb={this.state.pcb ? 'P' : ""}
@@ -163,11 +171,12 @@ class App extends Component {
                 onChange={this.handleStyleChange}
                 />
             </div>
+            <Downloader options={this.state}/>
           </Col>
         </Row>
         <Row>
-          <Col s={12} m={6} l={3}>
-            <Downloader />
+          <Col s={12} m={6} l={3} className="offset-s6">
+            
           </Col>
         </Row>
       </div>
